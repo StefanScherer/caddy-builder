@@ -26,7 +26,8 @@ script:
     if [ -n "$TRAVIS_TAG" ]; then
       # push image
       travis_retry timeout 5m docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-      docker tag stefanscherer/caddy:$CADDY_VERSION stefanscherer/caddy:latest
+      docker tag stefanprodan/caddy:$CADDY_VERSION stefanscherer/caddy:$CADDY_VERSION
+      docker tag stefanprodan/caddy:$CADDY_VERSION stefanscherer/caddy:latest
       docker push stefanscherer/caddy:$CADDY_VERSION
       docker push stefanscherer/caddy:latest
     fi
