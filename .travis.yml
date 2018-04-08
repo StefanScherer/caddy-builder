@@ -22,8 +22,6 @@ before_install:
 
 script:
   - CADDY_VERSION=$CADDY_VERSION docker-compose build caddy
-
-after_success:
   - >
     if [ -n "$TRAVIS_TAG" ]; then
       # push image
